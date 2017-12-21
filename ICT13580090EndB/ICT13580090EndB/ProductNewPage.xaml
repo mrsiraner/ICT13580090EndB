@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ICT13580090EndB.ProductNewPage">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="ประเภท"/>
+            <Picker Title="ประเภท" x:Name="catagoryPicker">
+                <Picker.Items>
+                    <x:String>รถมือ2</x:String>
+                    <x:String>รถกระบะ</x:String>
+                    <x:String>รถเก๋ง</x:String>
+                    <x:String>รถตู้</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="ยี่ห้อ"/>
+            <Picker Title="ยี่ห้อ" x:Name="brandPicker">
+                <Picker.Items>
+                    <x:String>BMW</x:String>
+                    <x:String>AUDI</x:String>
+                    <x:String>FORD</x:String>
+                    <x:String>PORSCHE</x:String>
+                    <x:String>BENZ</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="รุ่น"/>
+            <Entry
+                Placeholder="รุ่น"
+                x:Name="genEntry"/>
+
+            <Label Text="ปี"/>
+            <Label x:Name="yearLabel" Text="0"/>
+            <Stepper
+                 Maximum="10"
+                 Minimum="0"
+                 Value="0"
+                 Increment="1"
+                 x:Name="yearStepper"/>
+
+            <Label Text="ไมล์"/>
+            <Label x:Name="mileLabel" Text="0"/>
+            <Slider x:Name="mileSlider" 
+            Minimum="0" 
+            Maximum="10" />
+
+            <Label Text="สี"/>
+            <Picker Title="สี" x:Name="colorPicker">
+                <Picker.Items>
+                    <x:String>แดง</x:String>
+                    <x:String>ดำ</x:String>
+                    <x:String>ขาว</x:String>
+                    <x:String>น้ำเงิน</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                            FontSize="14"
+                            Text="รถดีเลอร์?"/>
+                <Switch x:Name="dleSwitch" />
+            </StackLayout>
+
+            <Label Text="รายละเอียด"/>
+            <Editor
+                Text="รายละเอียด"
+                
+                x:Name="descriptionEditor"
+                />
+
+            <Label Text="จังหวัด"/>
+            <Picker Title="จังหวัด" x:Name="countryPicker">
+                <Picker.Items>
+                    <x:String>กรุงเทพ</x:String>
+                    <x:String>เชียงใหม่</x:String>
+                    <x:String>เพชรบุรี</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="ราคา"/>
+            <Entry Placeholder="ราคา"
+                   x:Name="priceEntry"/>
+
+            <Label Text="เบอร์โทร"/>
+            <Entry
+                Placeholder="เบอร์โทร"
+                x:Name="phoneEntry"/>
+
+            <Button
+                x:Name="submitButton"
+                Text="ยืนยัน"
+                BackgroundColor="Green"
+                TextColor="White"
+                />
+            <Button
+                x:Name="cancelButton"
+                Text="ยกเลิก"
+                BackgroundColor="Red"
+                TextColor="White"
+                />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -2,12 +2,96 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ICT13580090EndB"
-             x:Class="ICT13580090EndB.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="ICT13580090EndB.MainPage"
+             Title="JumboCar Shop">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="เพิ่มสินค้า"
+            x:Name="newButton"
+            />
+    </ContentPage.ToolbarItems>
+
+    <ListView
+        x:Name="productListView"
+        RowHeight="100">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+
+                    <ViewCell.ContextActions>
+                        <MenuItem
+                            Text="แก้ไข"
+                            Clicked="Edit_Clicked"
+                            CommandParameter="{Binding .}"/>
+                        <MenuItem
+                        Text="ลบ"
+                        IsDestructive="true"
+                        Clicked="Delete_Clicked"
+                        CommandParameter="{Binding .}"/>
+                    </ViewCell.ContextActions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                       
+                        <StackLayout
+                            Grid.Column="1"
+                            Orientation="Vertical"
+                            >
+
+                            <Label Text="{Binding Catagory}"
+                            FontAttributes="Bold"
+                            TextColor="Navy"/>
+
+                            <Label
+                                Text="{Binding Brand}"/>
+
+                            <Label
+                                Text="{Binding Gen}"/>
+
+                            <Label
+                                Text="{Binding Year}"/>
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Column="2"
+                            Orientation="Vertical"
+                            >
+                        <Label
+                                Text="{Binding Mile}"/>
+                            <Label
+                                Text="{Binding Color}"/>
+                            <Label
+                                Text="{Binding Dle}"/>
+                            <Label
+                                Text="{Binding Description}"/>
+                        </StackLayout>
+                        <StackLayout
+                            Grid.Column="3"
+                            Orientation="Vertical"
+                            >
+                        <Label
+                                Text="{Binding Price}"/>
+                            <Label
+                                Text="{Binding Country}"/>
+                            <Label
+                                Text="{Binding Phone}"/>
+                            
+                            
+                        </StackLayout>
+                        
+                        
+
+
+
+                    </Grid>
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
